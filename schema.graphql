@@ -1,16 +1,15 @@
-type Restaurant {
+type OldRestaurant {
   id: ID
   name: String
-  customers: [Customer]
 }
 
-type Customer {
+type NewRestaurant {
   id: ID
   name: String
-  restaurant: Restaurant
 }
+
+union Restaurant = OldRestaurant | NewRestaurant
 
 type Query {
   restaurant(id: ID): Restaurant
-  customer(id: ID): Customer
 }

@@ -17,16 +17,21 @@ async function main() {
       //   fieldName: fieldResolver
       // }
       Query: {
-        customer: (parent, args, context) => {},
-        restaurant: (parent, args, context) => {},
+        restaurant: (parent, args, context) => {
+          return {};
+        },
       },
 
-      Customer: {
-        restaurant: (parent, args, context) => {},
+      Restaurant: {},
+
+      NewRestaurant: {
+        id: () => "new123",
+        name: () => "Some new restaurant",
       },
 
-      Restaurant: {
-        customers: (parent, args, context) => {},
+      OldRestaurant: {
+        id: () => "old123",
+        name: () => "Some Old Restaurant",
       },
     },
   });
